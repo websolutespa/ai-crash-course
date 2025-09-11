@@ -1,0 +1,7 @@
+__pycache__/
+tmp/
+*.ignore/
+*.pyc
+.env
+*.joblib
+*.keras

@@ -1,0 +1,1 @@
+[Q&A rag](https://cookbook.openai.com/examples/vector_databases/chroma/hyde-with-chroma-and-openai)

@@ -1,0 +1,5 @@
+fastapi[standard]
+pydantic
+langchain
+scikit-learn
+pandas
