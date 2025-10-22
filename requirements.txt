@@ -2,4 +2,9 @@ fastapi[standard]
 pydantic
 langchain
 scikit-learn
+tensorflow
+keras-tuner
+graphviz
 pandas
+seaborn
+kneed

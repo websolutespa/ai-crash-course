@@ -52,10 +52,10 @@ Explore these comprehensive learning paths to deepen your AI journey:
 | 📅 Week | 📖 Module | 🎓 Learning Goals | 🔑 Key Topics |
 |:-------:|-----------|-------------------|---------------|
 | [**01**](./01/README.md) | **🔰 AI Engineer Basics** | Understand role of AI Engineer, history, terminology, and foundations | • 📜 AI brief history<br/>• 💻 Software evolution<br/>• 🖥️ OS evolution |
-| [**02**](./02/README.md) | **🧠 ML/DL & Models** | Learn fundamentals of ML/DL and pre-trained models | • 🤖 ML types: supervised, unsupervised, RL<br/>• 🕸️ Neural nets, generative models, LLMs<br/>• 🏭 Pre-trained models: OpenAI, HuggingFace, Google<br/>• 🔓 Open vs Closed source AI |
-| [**03**](./03/README.md) | **🔌 OpenAI API** | Gain practical skills with OpenAI endpoints | • 💬 Chat Completions API<br/>• 🎮 Playground<br/>• 🎯 Fine-tuning basics<br/>• 🎫 Token management, moderation |
-| [**04**](./04/README.md) | **🧬 Embeddings** | Learn embeddings and vector databases | • ❓ What are embeddings?<br/>• 🎯 Use cases: semantic search, recsys<br/>• 📊 Vector DBs: Chroma, FAISS, Qdrant |
-| [**05**](./05/README.md) | **🔍 RAG** | Build retrieval-augmented generation pipelines | • ✂️ Chunking & embedding<br/>• 🔎 Retrieval process<br/>• ✨ Generation step<br/>• ⛓️ LangChain |
+| [**02**](./02/README.md) | **🧠 ML training & Neural Networks** | Learn fundamentals of ML/DL and pre-trained models | • 🤖 ML types: supervised, unsupervised, RL<br/>• 🕸️ Neural nets, generative models, LLMs<br/> |
+| [**03**](./03/README.md) | **🔌 LLM training & API** | Gain practical skills with OpenAI endpoints |  • 🏭 Pre-trained models: OpenAI, HuggingFace, Google<br/>• 🔓 Open vs Closed source AI<br/>• 💬 Chat Completions API<br/>• 🎮 Playground |
+| [**04**](./04/README.md) | **🧬 Embeddings** | Learn embeddings and vector databases | • 🎫 Token management, moderation<br/> • ❓ What are embeddings?<br/>• 🎯 Use cases: semantic search, recsys<br/>• 📊 Vector DBs: Chroma, FAISS, Qdrant |
+| [**05**](./05/README.md) | **🔍 RAG** | Build retrieval-augmented generation pipelines | • ✂️ Chunking & embedding<br/>• 🔎 Retrieval process<br/>• ✨ Generation step<br/>• ⛓️ LangChain<br/>• 🎯 Fine-tuning basics<br/> |
 | [**06**](./06/README.md) | **🔗 Model Context Protocol** | Understand and apply MCP for tool interoperability | • 🏗️ MCP concept & architecture<br/>• 🔧 Tool/plugin integration<br/>• 🤖 Use cases in AI agents |
 | [**07**](./07/README.md) | **✍️ Prompting Basics** | Foundations of prompting | • 💭 What is prompting?<br/>• 🎲 LLM tokens, hallucination<br/>• ⚙️ Config: temperature, top-k, top-p, penalties |
 | [**08**](./08/README.md) | **📝 Prompting Techniques I** | Apply core prompting strategies | • 🎯 Zero-shot, one-shot, few-shot<br/>• 🎭 Role/system/contextual prompting |
@@ -79,14 +79,23 @@ Explore these comprehensive learning paths to deepen your AI journey:
 git clone https://github.com/websolutespa/ai-crash-course.git
 cd ai-crash-course
 
-# 2️⃣ Copy and configure environment variables
+# 2️⃣ Create and activate virtual environment
+python -m venv .venv
+
+# Activate virtual environment:
+# On Windows:
+.\.venv\Scripts\activate
+# On macOS/Linux:
+# source .venv/bin/activate
+
+# 3️⃣ Copy and configure environment variables
 cp .env.example .env
 # Edit .env with your API keys and settings
 
-# 3️⃣ Install dependencies
-pip install -r requirements.txt
+# 4️⃣ Install dependencies
+pip install -U -r requirements.txt
 
-# 4️⃣ Start learning! 🎉
+# 5️⃣ Start learning! 🎉
 code .
 ```
 

@@ -1,0 +1,151 @@
+<svg viewBox="0 0 1400 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="30" text-anchor="middle" font-size="24" font-weight="bold" font-family="Arial">Transformer-based LLM (Small/Medium)</text>
+  
+  <!-- Input Layer -->
+  <g id="input-layer">
+    <rect x="50" y="80" width="180" height="600" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="140" y="105" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">Input</text>
+    <text x="140" y="125" text-anchor="middle" font-size="14" font-family="Arial">Token IDs</text>
+    
+    <!-- Token representations -->
+    <rect x="110" y="160" width="60" height="30" fill="#8BBEE8" stroke="#333" stroke-width="1.5"/>
+    <text x="140" y="180" text-anchor="middle" font-size="12" font-family="Arial">token₁</text>
+    
+    <rect x="110" y="210" width="60" height="30" fill="#8BBEE8" stroke="#333" stroke-width="1.5"/>
+    <text x="140" y="230" text-anchor="middle" font-size="12" font-family="Arial">token₂</text>
+    
+    <rect x="110" y="260" width="60" height="30" fill="#8BBEE8" stroke="#333" stroke-width="1.5"/>
+    <text x="140" y="280" text-anchor="middle" font-size="12" font-family="Arial">token₃</text>
+    
+    <text x="140" y="320" text-anchor="middle" font-size="20" font-family="Arial">...</text>
+    
+    <rect x="110" y="350" width="60" height="30" fill="#8BBEE8" stroke="#333" stroke-width="1.5"/>
+    <text x="140" y="370" text-anchor="middle" font-size="12" font-family="Arial">tokenₙ</text>
+  </g>
+  
+  <!-- Embedding Layer -->
+  <g id="embedding">
+    <rect x="280" y="80" width="180" height="600" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="370" y="105" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">Embedding</text>
+    <text x="370" y="125" text-anchor="middle" font-size="13" font-family="Arial">(50K vocab × 768→3072 vectors)</text>
+    
+    <circle cx="370" cy="170" r="15" fill="#90EE90" stroke="#333" stroke-width="1.5"/>
+    <circle cx="370" cy="220" r="15" fill="#90EE90" stroke="#333" stroke-width="1.5"/>
+    <circle cx="370" cy="270" r="15" fill="#90EE90" stroke="#333" stroke-width="1.5"/>
+    <text x="370" cy="330" text-anchor="middle" font-size="20" font-family="Arial">...</text>
+    <circle cx="370" cy="370" r="15" fill="#90EE90" stroke="#333" stroke-width="1.5"/>
+    
+    <!-- Arrows from input to embedding -->
+    <line x1="170" y1="175" x2="350" y2="170" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="170" y1="225" x2="350" y2="220" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="170" y1="275" x2="350" y2="270" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+    <line x1="170" y1="365" x2="350" y2="370" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Transformer Block 1 -->
+  <g id="transformer1">
+    <rect x="510" y="80" width="200" height="600" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="610" y="105" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">Transformer Block 1</text>
+    
+    <!-- Multi-Head Attention -->
+    <rect x="535" y="130" width="150" height="80" fill="#FFD700" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+    <text x="610" y="155" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Multi-Head</text>
+    <text x="610" y="172" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Self-Attention</text>
+    <text x="610" y="192" text-anchor="middle" font-size="11" font-family="Arial">(8 heads)</text>
+    
+    <!-- Layer Norm -->
+    <rect x="560" y="230" width="100" height="30" fill="#DDA0DD" stroke="#333" stroke-width="1.5"/>
+    <text x="610" y="250" text-anchor="middle" font-size="12" font-family="Arial">LayerNorm</text>
+    
+    <!-- Feed Forward -->
+    <rect x="535" y="280" width="150" height="80" fill="#98FB98" stroke="#333" stroke-width="1.5" opacity="0.8"/>
+    <text x="610" y="305" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Feed Forward</text>
+    <text x="610" y="322" text-anchor="middle" font-size="11" font-family="Arial">(Dense: 768→3072)</text>
+    <text x="610" y="338" text-anchor="middle" font-size="11" font-family="Arial">(Dense: 3072→768)</text>
+    <text x="610" y="354" text-anchor="middle" font-size="11" font-family="Arial">GELU activation</text>
+    
+    <!-- Dropout -->
+    <rect x="560" y="380" width="100" height="30" fill="#FFB6C1" stroke="#333" stroke-width="1.5"/>
+    <text x="610" y="400" text-anchor="middle" font-size="12" font-family="Arial">Dropout (0.1)</text>
+    
+    <!-- Layer Norm -->
+    <rect x="560" y="430" width="100" height="30" fill="#DDA0DD" stroke="#333" stroke-width="1.5"/>
+    <text x="610" y="450" text-anchor="middle" font-size="12" font-family="Arial">LayerNorm</text>
+    
+    <!-- Residual connections -->
+    <path d="M 520 170 Q 490 170 490 400 Q 490 450 520 450" fill="none" stroke="#FF6347" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="475" y="310" text-anchor="middle" font-size="10" fill="#FF6347" font-family="Arial">Residual connections</text>
+    
+    <!-- Arrows from embedding -->
+    <line x1="390" y1="220" x2="530" y2="170" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- More Transformer Blocks indicator -->
+  <g id="more-blocks">
+    <text x="770" y="250" text-anchor="middle" font-size="28" font-weight="bold" font-family="Arial">...</text>
+    <text x="770" y="280" text-anchor="middle" font-size="13" font-family="Arial">(12-24 layers)</text>
+    <line x1="710" y1="300" x2="850" y2="300" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  </g>
+  
+  <!-- Transformer Block N -->
+  <g id="transformerN">
+    <rect x="900" y="80" width="200" height="600" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="1000" y="105" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">Transformer Block N</text>
+    
+    <!-- Multi-Head Attention -->
+    <rect x="925" y="130" width="150" height="80" fill="#FFD700" stroke="#333" stroke-width="1.5" opacity="0.7"/>
+    <text x="1000" y="155" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Multi-Head</text>
+    <text x="1000" y="172" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Self-Attention</text>
+    <text x="1000" y="192" text-anchor="middle" font-size="11" font-family="Arial">(8 heads)</text>
+    
+    <!-- Layer Norm -->
+    <rect x="950" y="230" width="100" height="30" fill="#DDA0DD" stroke="#333" stroke-width="1.5"/>
+    <text x="1000" y="250" text-anchor="middle" font-size="12" font-family="Arial">LayerNorm</text>
+    
+    <!-- Feed Forward -->
+    <rect x="925" y="280" width="150" height="80" fill="#98FB98" stroke="#333" stroke-width="1.5" opacity="0.8"/>
+    <text x="1000" y="305" text-anchor="middle" font-size="13" font-weight="bold" font-family="Arial">Feed Forward</text>
+    <text x="1000" y="322" text-anchor="middle" font-size="11" font-family="Arial">(Dense: 768→3072)</text>
+    <text x="1000" y="338" text-anchor="middle" font-size="11" font-family="Arial">(Dense: 3072→768)</text>
+    <text x="1000" y="354" text-anchor="middle" font-size="11" font-family="Arial">GELU activation</text>
+    
+    <!-- Dropout -->
+    <rect x="950" y="380" width="100" height="30" fill="#FFB6C1" stroke="#333" stroke-width="1.5"/>
+    <text x="1000" y="400" text-anchor="middle" font-size="12" font-family="Arial">Dropout (0.1)</text>
+    
+    <!-- Layer Norm -->
+    <rect x="950" y="430" width="100" height="30" fill="#DDA0DD" stroke="#333" stroke-width="1.5"/>
+    <text x="1000" y="450" text-anchor="middle" font-size="12" font-family="Arial">LayerNorm</text>
+    
+    <!-- Residual connections -->
+    <path d="M 910 170 Q 880 170 880 400 Q 880 450 910 450" fill="none" stroke="#FF6347" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="865" y="310" text-anchor="middle" font-size="10" fill="#FF6347" font-family="Arial">Residual connections</text>
+  </g>
+  
+  <!-- Output Layer -->
+  <g id="output-layer">
+    <rect x="1150" y="80" width="200" height="600" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="1250" y="105" text-anchor="middle" font-size="16" font-weight="bold" font-family="Arial">Output</text>
+    <text x="1250" y="125" text-anchor="middle" font-size="13" font-family="Arial">(Dense + Softmax)</text>
+    <text x="1250" y="145" text-anchor="middle" font-size="12" font-family="Arial">(50K vocab)</text>
+    
+    <circle cx="1250" cy="190" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <circle cx="1250" cy="230" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <circle cx="1250" cy="270" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <circle cx="1250" cy="310" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <text x="1250" y="360" text-anchor="middle" font-size="20" font-family="Arial">...</text>
+    <circle cx="1250" cy="410" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <circle cx="1250" cy="450" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    <circle cx="1250" cy="490" r="13" fill="#FFA500" stroke="#333" stroke-width="1.5"/>
+    
+    <!-- Arrows from last transformer block -->
+    <line x1="1100" y1="450" x2="1235" y2="270" stroke="#333" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+  </g>
+</svg>
