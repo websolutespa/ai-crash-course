@@ -53,14 +53,18 @@ Explore these comprehensive learning paths to deepen your AI journey:
 |:-------:|-----------|-------------------|---------------|
 | [**01**](./01/README.md) | **🔰 AI Engineer Basics** | Understand role of AI Engineer, history, terminology, and foundations | • 📜 AI brief history<br/>• 💻 Software evolution<br/>• 🖥️ OS evolution |
 | [**02**](./02/README.md) | **🧠 ML training & Neural Networks** | Learn fundamentals of ML/DL and pre-trained models | • 🤖 ML types: supervised, unsupervised, RL<br/>• 🕸️ Neural nets, generative models, LLMs<br/> |
-| [**03**](./03/README.md) | **🔌 LLM training & API** | Gain practical skills with OpenAI endpoints |  • 🏭 Pre-trained models: OpenAI, HuggingFace, Google<br/>• 🔓 Open vs Closed source AI<br/>• 💬 Chat Completions API<br/>• 🎮 Playground |
-| [**04**](./04/README.md) | **🧬 Embeddings** | Learn embeddings and vector databases | • 🎫 Token management, moderation<br/> • ❓ What are embeddings?<br/>• 🎯 Use cases: semantic search, recsys<br/>• 📊 Vector DBs: Chroma, FAISS, Qdrant |
-| [**05**](./05/README.md) | **🔍 RAG** | Build retrieval-augmented generation pipelines | • ✂️ Chunking & embedding<br/>• 🔎 Retrieval process<br/>• ✨ Generation step<br/>• ⛓️ LangChain<br/>• 🎯 Fine-tuning basics<br/> |
-| [**06**](./06/README.md) | **🔗 Model Context Protocol** | Understand and apply MCP for tool interoperability | • 🏗️ MCP concept & architecture<br/>• 🔧 Tool/plugin integration<br/>• 🤖 Use cases in AI agents |
-| [**07**](./07/README.md) | **✍️ Prompting Basics** | Foundations of prompting | • 💭 What is prompting?<br/>• 🎲 LLM tokens, hallucination<br/>• ⚙️ Config: temperature, top-k, top-p, penalties |
-| [**08**](./08/README.md) | **📝 Prompting Techniques I** | Apply core prompting strategies | • 🎯 Zero-shot, one-shot, few-shot<br/>• 🎭 Role/system/contextual prompting |
-| [**09**](./09/README.md) | **🧩 Prompting Techniques II** | Advanced prompting patterns | • 🧵 Chain of Thought (CoT)<br/>• 🌳 Tree of Thoughts (ToT)<br/>• ⚡ ReAct<br/>• 🤖 Automatic prompt engineering |
-| [**10**](./10/README.md) | **✅ Best Practices & Security** | Apply best practices and basic red teaming | • 🛡️ Prompting best practices<br/>• 🔒 Injection defenses<br/>• 🎯 Structured outputs<br/>• 🔴 AI Red Teaming: jailbreaks, defenses |
+| [**03**](./03/README.md) | **🔌 LLM training** | Deep-dive in LLM 3 training phases |  • 🏭 Pre-trained models: HuggingFace<br/>• 🎯 Fine-tuning basics<br/>• 🔄 RLHF |
+| [**04**](./04/README.md) | **📦 LLM Catalog & Classification** | Classify and compare LLMs | • 🗂️ Open vs Closed source<br/>• ⚙️ Quantization<br/>• 🧑‍🏫 Distillation<br/>• 📊 Benchmarking |
+| [**05**](./05/README.md) | **🧬 Embeddings** | Learn LLM architecture, embeddings and vector databases | • 🎫 Token management, moderation<br/> • ❓ What are embeddings?<br/>. 🧠 Attention Is All You Need<br/>• 🎯 Use cases: semantic search, recsys |
+| [**06**](./06/README.md) | **🔍 RAG** | Build retrieval-augmented generation pipelines | • ✂️ Chunking & embedding<br/>• 🔎 Retrieval process<br/>• ✨ Generation step<br/>• ⛓️ LangChain<br/>. 📊 Vector DBs: Chroma, FAISS, Qdrant |
+| [**07**](./07/README.md) | **🤖 AI Agents** | Build AI agents with tool use capabilities | • 🧩 Agent architectures<br/>• 🛠️ Tool integration<br/>• 🔄 Feedback loops<br/>• 📚 LangChain agents |
+| [**08**](./08/README.md) | **🔗 Model Context Protocol** | Understand and apply MCP for tool interoperability | • 🏗️ MCP concept & architecture<br/>• 🔧 Tool/plugin integration<br/>• 🤖 Use cases in AI agents |
+| [**09**](./09/README.md) | **✍️ Prompting Techniques I** | Apply core prompting strategies | • 🎯 Zero-shot, one-shot, few-shot<br/>• 🎭 Role/system/contextual prompting<br/> • 🧵 Chain of Thought (CoT)<br/>• 🌳 Tree of Thoughts (ToT)<br/> |
+| [**10**](./10/README.md) | **🧩 Prompting Techniques II** | Advanced prompting patterns | • ⚡ ReAct<br/>• 🤖 Automatic prompt engineering<br/>• 🛡️ Prompting best practices<br/>• 🔒 Injection defenses<br/>• 🎯 Structured outputs<br/>• 🔴 AI Red Teaming: jailbreaks, defenses |
+
+<!-- 
+| [**07**](./07/README.md) | **🤖 AI Agents** | Build AI agents with tool use capabilities | • 🧩 Agent architectures<br/>• 🛠️ Tool integration<br/>• 🔄 Feedback loops<br/>• 📚 LangChain agents |
+-->
 
 ---
 

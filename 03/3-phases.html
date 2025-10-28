@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Training Phases</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .phase {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .phase:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+        
+        .phase-number {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-top: 10px;
+        }
+        
+        .phase-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .phase-subtitle {
+            font-size: 1rem;
+            color: #718096;
+            margin-left: auto;
+            font-weight: 600;
+        }
+        
+        .phase-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid;
+        }
+        
+        .phase-1 .metric-card { border-left-color: #4299e1; }
+        .phase-2 .metric-card { border-left-color: #48bb78; }
+        .phase-3 .metric-card { border-left-color: #ed8936; }
+        
+        .metric-label {
+            font-size: 0.85rem;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .metric-value {
+            font-size: 1.3rem;
+            color: #2d3748;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        
+        .arrow {
+            text-align: center;
+            color: white;
+            font-size: 3rem;
+            margin: -10px 0;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .summary {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 30px;
+        }
+        
+        .summary-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        .summary-card {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+        }
+        
+        .summary-card-title {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        
+        .summary-card-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            .phase-content { grid-template-columns: 1fr; }
+            .summary-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 The Three Phases of LLM Training</h1>
+        
+        <div class="flow-container">
+            <!-- Phase 1: Pre-Training -->
+            <div class="phase phase-1">
+                <div class="phase-number">1</div>
+                <div class="phase-header">
+                    <div class="phase-title">Pre-Training</div>
+                    <div class="phase-subtitle">Foundation Model</div>
+                </div>
+                <div class="phase-content">
+                    <div class="metric-card">
+                        <div class="metric-label">📊 Training Data</div>
+                        <div class="metric-value">300B - 15T+ tokens</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⏱️ Training Time</div>
+                        <div class="metric-value">23 - 90+ days</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">💰 Cost Range</div>
+                        <div class="metric-value">$1.7M - $100M+</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🎯 Objective</div>
+                        <div class="metric-value">Next token prediction</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🔧 Technique</div>
+                        <div class="metric-value">Unsupervised learning on web data</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">📦 Output</div>
+                        <div class="metric-value">Base/Foundation Model</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🏢 Examples</div>
+                        <div class="metric-value">GPT-3 Base, LLaMA 3 Base, Claude Base</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⚡ Hardware</div>
+                        <div class="metric-value">1,000s - 10,000s of GPUs</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <!-- Phase 2: Supervised Fine-Tuning -->
+            <div class="phase phase-2">
+                <div class="phase-number">2</div>
+                <div class="phase-header">
+                    <div class="phase-title">Supervised Fine-Tuning (SFT)</div>
+                    <div class="phase-subtitle">Instruct Model</div>
+                </div>
+                <div class="phase-content">
+                    <div class="metric-card">
+                        <div class="metric-label">📊 Training Data</div>
+                        <div class="metric-value">10K - 500K examples</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⏱️ Training Time</div>
+                        <div class="metric-value">3 - 48 hours</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">💰 Cost Range</div>
+                        <div class="metric-value">$600 - $50K</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🎯 Objective</div>
+                        <div class="metric-value">Follow instructions accurately</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🔧 Technique</div>
+                        <div class="metric-value">Supervised learning on prompt-response pairs</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">📦 Output</div>
+                        <div class="metric-value">Instruction-Tuned Model</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🏢 Examples</div>
+                        <div class="metric-value">LLaMA 2 Chat, Alpaca, Vicuna</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⚡ Hardware</div>
+                        <div class="metric-value">8 - 64 GPUs</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="arrow">↓</div>
+            
+            <!-- Phase 3: RLHF -->
+            <div class="phase phase-3">
+                <div class="phase-number">3</div>
+                <div class="phase-header">
+                    <div class="phase-title">Reinforcement Learning from Human Feedback (RLHF)</div>
+                    <div class="phase-subtitle">Aligned Model</div>
+                </div>
+                <div class="phase-content">
+                    <div class="metric-card">
+                        <div class="metric-label">📊 Training Data</div>
+                        <div class="metric-value">10K - 160K comparisons</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⏱️ Training Time</div>
+                        <div class="metric-value">1 - 21 days</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">💰 Cost Range</div>
+                        <div class="metric-value">$10K - $500K</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🎯 Objective</div>
+                        <div class="metric-value">Align with human preferences</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🔧 Technique</div>
+                        <div class="metric-value">PPO/DPO with reward model</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">📦 Output</div>
+                        <div class="metric-value">Production-Ready Assistant</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">🏢 Examples</div>
+                        <div class="metric-value">ChatGPT, Claude, GPT-4</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-label">⚡ Hardware</div>
+                        <div class="metric-value">8 - 64+ GPUs + Human Labelers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Summary Section -->
+        <div class="summary">
+            <div class="summary-title">📈 Training Evolution Summary</div>
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="summary-card-title">Total Timeline</div>
+                    <div class="summary-card-value">1-4 months</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-card-title">Total Cost Range</div>
+                    <div class="summary-card-value">$2M - $100M+</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-card-title">Data Requirement</div>
+                    <div class="summary-card-value">Trillions of tokens</div>
+                </div>
+                <div class="summary-card">
+                    <div class="summary-card-title">Final Output</div>
+                    <div class="summary-card-value">AI Assistant</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
