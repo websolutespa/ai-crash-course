@@ -62,10 +62,6 @@ Explore these comprehensive learning paths to deepen your AI journey:
 | [**09**](./09/README.md) | **✍️ Prompting Techniques I** | Apply core prompting strategies | • 🎯 Zero-shot, one-shot, few-shot<br/>• 🎭 Role/system/contextual prompting<br/> • 🧵 Chain of Thought (CoT)<br/>• 🌳 Tree of Thoughts (ToT)<br/> |
 | [**10**](./10/README.md) | **🧩 Prompting Techniques II** | Advanced prompting patterns | • ⚡ ReAct<br/>• 🤖 Automatic prompt engineering<br/>• 🛡️ Prompting best practices<br/>• 🔒 Injection defenses<br/>• 🎯 Structured outputs<br/>• 🔴 AI Red Teaming: jailbreaks, defenses |
 
-<!-- 
-| [**07**](./07/README.md) | **🤖 AI Agents** | Build AI agents with tool use capabilities | • 🧩 Agent architectures<br/>• 🛠️ Tool integration<br/>• 🔄 Feedback loops<br/>• 📚 LangChain agents |
--->
-
 ---
 
 ## ⚙️ Requirements & Setup
