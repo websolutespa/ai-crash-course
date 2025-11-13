@@ -75,12 +75,17 @@ Explore these comprehensive learning paths to deepen your AI journey:
 ### 🚀 Quick Start
 
 ```pwsh
+# 🐍 uv
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+# linux: curl -LsSf https://astral.sh/uv/install.sh | sh
+uv --version
+
 # 1️⃣ Clone the repository
 git clone https://github.com/websolutespa/ai-crash-course.git
 cd ai-crash-course
 
 # 2️⃣ Create and activate virtual environment
-python -m venv .venv
+uv venv
 
 # Activate virtual environment:
 # On Windows:
@@ -88,15 +93,30 @@ python -m venv .venv
 # On macOS/Linux:
 # source .venv/bin/activate
 
+# install ipykernel
+uv pip install ipykernel -U --force-reinstall
+
 # 3️⃣ Copy and configure environment variables
 cp .env.example .env
 # Edit .env with your API keys and settings
 
 # 4️⃣ Install dependencies
-pip install -U -r requirements.txt
+uv pip install -U -r requirements.txt
 
 # 5️⃣ Start learning! 🎉
 code .
+```
+
+- Note for CUDA users: torch installation &  set `TORCH_CUDA_ARCH_LIST` in `.env` according to your GPU
+```sh
+nvcc --version
+nvidia-smi
+#check CUDA capacity, e.g., (12, 1)
+python -c "import torch; print(torch.cuda.get_device_capability())"
+# Or use nvidia-smi to find your GPU model, then check: https://developer.nvidia.com/cuda-gpus
+# set TORCH_CUDA_ARCH_LIST .env accordingly, e.g.:  TORCH_CUDA_ARCH_LIST=12.1
+# finally:
+uv pip install -U torch --index-url https://download.pytorch.org/whl/cu130
 ```
 
 <div align="center">
