@@ -1,0 +1,13 @@
+<items>
+<products>
+  <product>
+    <id>1</id>
+    <name>Laptop</name>
+    <price>999.99</price>
+  </product>
+  <product>
+    <id>2</id>
+    <name>Smartphone</name>
+    <price>499.99</price>
+  </product>
+</products>

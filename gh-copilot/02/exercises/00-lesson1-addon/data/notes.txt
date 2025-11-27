@@ -1,0 +1,8 @@
+Questa è una demo di file di testo.
+Contiene alcune note di esempio.
+Appunti riunione 22/11/2025
+
+- Verificare lo stato degli ordini pendenti
+- Aggiornare il catalogo prodotti
+- Inviare newsletter promozionale
+- Analizzare feedback clienti

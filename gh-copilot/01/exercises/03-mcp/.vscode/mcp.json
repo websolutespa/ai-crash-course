@@ -1,0 +1,30 @@
+{
+  "servers": {
+    "payload3-mcp": {
+      "url": "http://127.0.0.1:3000/api/mcp",
+      "headers": {
+        "Authorization": "Bearer e0da0cf7-c572-4ae2-8577-3d68fa29410c"
+      }
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "mongodb-js/mongodb-mcp-server": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["-y", "mongodb-mcp-server@latest", "--readOnly"],
+      "env": {
+        "MDB_MCP_CONNECTION_STRING": "${input:mcp_connection_string}"
+      }
+    }
+  },
+  "inputs": [
+    {
+      "id": "mcp_connection_string",
+      "type": "promptString",
+      "description": "MongoDB connection string for direct database connections. Optional, if not set, you'll need to call the connect tool before interacting with MongoDB data.",
+      "password": true
+    }
+  ]
+}

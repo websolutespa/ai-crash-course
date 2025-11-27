@@ -1,0 +1,14 @@
+app_name: DemoApp
+		app:
+			name: ecommerce
+			version: 2.1.0
+		database:
+			host: localhost
+			port: 5432
+			user: admin
+			password: secret123
+		features:
+			- login
+			- product_search
+			- checkout
+debug: true
