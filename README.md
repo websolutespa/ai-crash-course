@@ -62,6 +62,13 @@ Explore these comprehensive learning paths to deepen your AI journey:
 | [**09**](./09/README.md) | **✍️ Prompting Techniques I** | Apply core prompting strategies | • 🎯 Zero-shot, one-shot, few-shot<br/>• 🎭 Role/system/contextual prompting<br/> • 🧵 Chain of Thought (CoT)<br/>• 🌳 Tree of Thoughts (ToT)<br/> |
 | [**10**](./10/README.md) | **🧩 Prompting Techniques II** | Advanced prompting patterns | • ⚡ ReAct<br/>• 🤖 Automatic prompt engineering<br/>• 🛡️ Prompting best practices<br/>• 🔒 Injection defenses<br/>• 🎯 Structured outputs<br/>• 🔴 AI Red Teaming: jailbreaks, defenses |
 
+### 🚀 GitHub Copilot Overview
+
+| 📅 Lesson | 📖 Module | 🎓 Learning Goals |
+|:-------:|-----------|-------------------|
+| [**01**](./gh-copilot/01/README.md) | **🤖 Copilot Basics** | Master Copilot features, customization and MCP |
+| [**02**](./gh-copilot/02/README.md) | **🛠️ Advanced Workflows** | Code review, Coding Agents and legacy refactoring |
+
 ---
 
 ## ⚙️ Requirements & Setup
