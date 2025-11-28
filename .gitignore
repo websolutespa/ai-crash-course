@@ -1,9 +1,11 @@
 __pycache__/
 .venv/
 tmp/
+unsloth*/
 *.ignore/
 *.pyc
 .env
 *.joblib
 *.keras
+*.pth
 cache.db*
