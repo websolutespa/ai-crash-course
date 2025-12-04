@@ -125,6 +125,12 @@ python -c "import torch; print(torch.cuda.get_device_capability())"
 # finally:
 uv pip install -U torch --index-url https://download.pytorch.org/whl/cu130
 ```
+- Set also `CUDA_HOME` in `.env` if needed, e.g.: `CUDA_HOME=/usr/local/cuda-13.0`
+- for flash attention support, install `flash_attn` package in the venv:
+```sh
+sudo apt-get install python3.12-dev
+uv pip install -U einops flash_attn
+```
 
 <div align="center">
 

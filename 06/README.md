@@ -89,6 +89,7 @@ Transformers have become the foundation for many state-of-the-art (SOTA) models 
 <summary>Attention is all you need</summary>
 
 [🐍attention](transformer-attention.ipynb)
+
 </details>
 
 <details>
@@ -203,6 +204,7 @@ matrices between all heads, or groups of heads (`grouped-query attention`).
 - Terms & Math
   - [📘Transformer taxonomy](https://kipp.ly/transformer-taxonomy/)
   - [📘Transformer inference math](https://kipp.ly/transformer-inference-arithmetic/)
+  - [📘AI Math summary](https://pub.towardsai.net/the-mathematical-foundation-of-ai-what-everyone-misses-b1eedd27b60b)
 
 - Visual Explanations
   - [📺Video Transformers](https://www.youtube.com/watch?v=wjZofJX0v4M)
@@ -211,6 +213,7 @@ matrices between all heads, or groups of heads (`grouped-query attention`).
 - Books & Articles
   - [📋Hands-On Large Language Models](https://github.com/HandsOnLLM/Hands-On-Large-Language-Models)
   - [📘The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)
+  - [📘DeepSeek-R1 architecture](https://medium.com/@damianvtran/the-anatomy-of-a-modern-llm-0347afd72514)
   - [🧠Attention is all you need](https://arxiv.org/abs/1706.03762)
 
 - Demos
