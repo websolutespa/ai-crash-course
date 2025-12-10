@@ -1,0 +1,28 @@
+@host = http://localhost:11434
+
+### list models
+curl {{host}}/api/tags
+
+### model detail
+curl {{host}}/api/show -d '{"model":"embeddinggemma:300m"}'
+
+### embed
+curl {{host}}/api/embed -d '{
+"model":"embeddinggemma:300m","input":"Your text to embed here"
+}'
+
+### chat
+curl {{host}}/api/chat -d '{
+"model": "granite4:3b-h",
+"messages": [
+{"role": "user", "content": "Why is the sky blue?"}
+],
+"stream": false
+}'
+
+### generate (detect image - black dog)
+curl {{host}}/api/generate -d '{
+"model": "deepseek-ocr:3b",
+"prompt": "/home/admin/_github/massimodipaolo/ai-crash-course/app/static/01/karpathy-x-english.png\nDescribe this image in markdown.",
+"stream": false
+}'

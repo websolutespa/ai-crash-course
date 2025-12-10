@@ -1,0 +1,130 @@
+@system = You are a helpful AI assistant that can use tools to answer user questions. Cite your sources when using tools.
+@query = Who won the 2024 US presidential election?
+@mock_response = [{'snippet': 'Trump, who lost the 2020 presidential election to Biden, ran for reelection to a nonconsecutive second term. ... the Republican Party's presidential ...', 'title': '2024 United States presidential election - Wikipedia', 'link': 'https://en.wikipedia.org/wiki/2024_United_States_presidential_election'}, {'snippet': 'So, who won the presidential election in 2024 ? ... This means that Trump won the 2024 presidential election based on electoral votes.', 'title': 'Who Won the Presidential Election in 2024? Voting Is Over', 'link': 'https://www.distractify.com/p/who-won-the-presidential-election'}, {'snippet': 'The 2024 United States presidential election was the 60th quadrennial presidential election , held on Tuesday, November 5, 2024 .', 'title': 'Presidential Election of 2024 - 270toWin', 'link': 'https://www.270towin.com/2024-election/'}]
+### query without tool
+POST {{host}}{{api-chat}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "model": "{{model}}",
+  "messages": [
+    {
+      "role": "system",
+      "content": "{{system}}"
+    },
+    {
+      "role": "user",
+      "content": "{{query}}"
+    }
+  ],
+  "stream": false
+}
+
+### ask for tool selection 
+# @name rq
+POST {{host}}{{api-chat}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "model": "{{model}}",
+  "messages": [
+    {
+      "role": "system",
+      "content": "{{system}}"
+    },
+    {
+      "role": "user",
+      "content": "{{query}}"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "wiki_search",
+        "description": "Perform a Wikipedia search.",
+        "parameters": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "web_search",
+        "description": "Perform a web search using DuckDuckGo.",
+        "parameters": {
+          "properties": {
+            "query": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "query"
+          ],
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "stream": false
+}
+
+####
+@rs = {{rq.response.body.message}}
+
+### query enriched with tool content
+POST {{host}}{{api-chat}}
+Accept: application/json
+Content-Type: application/json
+
+{
+  "model": "{{model}}",
+  "messages": [
+    {
+      "role": "system",
+      "content": "{{system}}"
+    },
+    {
+      "role": "user",
+      "content": "{{query}}"
+    },    
+    {{rs}},
+    {
+      "role": "tool",
+      "content": "{{mock_response}}",
+      "tool_call_id": "{{rs | jsonPath('$.tool_calls[0].id')}}"
+    }
+  ],
+  "stream": false
+}
+
+### query with pre-filled context
+POST {{host}}{{api-chat}} 
+Accept: application/json
+Content-Type: application/json
+
+{
+  "model": "{{model}}",
+  "messages": [
+    {
+      "role": "system",
+      "content": "{{system}}"
+    },
+    {
+      "role": "user",
+      "content": "{{query}}\n\nContext: {{mock_response}}"
+    }
+  ],
+  "stream": false
+}

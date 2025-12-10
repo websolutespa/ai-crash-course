@@ -1,6 +1,7 @@
 __pycache__/
 .venv/
 tmp/
+static/
 unsloth*/
 *.ignore/
 *.pyc

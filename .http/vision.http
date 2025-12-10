@@ -1,0 +1,23 @@
+### qwen3-vl;8b
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "qwen3-vl:8b",
+  "prompt": "/home/admin/_github/massimodipaolo/ai-crash-course/app/static/01/karpathy-x-english.png\nDescribe this image in markdown.",
+  "stream": false,
+  "options": {
+    "verbose": false
+  }
+}'
+
+### generate: deepseek-ocr:3b
+curl -X POST http://localhost:11434/api/generate -d '{
+  "model": "deepseek-ocr:3b",
+  "prompt": "../app/static/01/karpathy-x-english.png\nDescribe this image in markdown.",
+  "stream": false
+}'
+
+### chat: deepseek-ocr:3b
+curl -X POST http://localhost:11434/v1/api/generate -d '{
+  "model": "deepseek-ocr:3b",
+  "prompt": "/home/admin/_github/massimodipaolo/ai-crash-course/app/static/01/karpathy-x-english.png\nDescribe this image in markdown.",
+  "stream": false
+}'
