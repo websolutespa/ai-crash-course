@@ -9,3 +9,5 @@ kneed
 transformers
 datasets
 tqdm 
+fastmcp
+langchain-mcp-adapters

@@ -1,5 +1,7 @@
 __pycache__/
 .venv/
+.gradio/
+.streamlit/secrets.toml
 tmp/
 static/
 unsloth*/
@@ -9,4 +11,5 @@ unsloth*/
 *.joblib
 *.keras
 *.pth
+*.pem
 cache.db*
