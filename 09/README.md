@@ -195,3 +195,22 @@ To reduce hallucinations through prompting, use techniques such as:
 - Use variables / placeholders in your prompts for easier configuration / reuse
 - Document and track prompt versions 
 - Automate evaluation
+
+---
+
+## Automatic prompt engineering
+Automatic Prompt Engineering (APE) uses LLMs to generate and optimize prompts automatically, reducing human effort while enhancing model performance. The process involves prompting a model to create multiple prompt variants, evaluating them using metrics like BLEU or ROUGE, then selecting the highest-scoring candidate. For example, generating 10 variants of customer order phrases for chatbot training, then testing and refining the best performers. This iterative approach helps discover effective prompts that humans might not consider, automating the optimization process.
+
+### Common APE frameworks
+- **Prompt optimization tools**: Platforms like OpenAI's Prompt Optimizer and Anthropic's prompt engineering tools automate prompt generation and evaluation, streamlining the APE process.
+
+    [🔗 Prompt optimizer: OpenAI](https://platform.openai.com/chat/edit?models=gpt-5&optimize=true)
+
+    [🔗 Prompt optimizer: Anthropic](https://platform.claude.com/dashboard)
+
+    [🔗 OpenAI prompt optimizer](https://cookbook.openai.com/examples/optimize_prompts)
+
+
+- **DSPy**: A high-level language for building reliable AI systems, including prompt engineering tasks.
+
+    [🔗 DSPy docs](https://dspy.ai/)

@@ -1,0 +1,14 @@
+{
+   "rest": {
+      "RestGenerator": {
+         "name": "app-with-guardrail",
+         "uri": "http://127.0.0.1:8000/generate",
+         "method": "post",
+         "req_template_json_object": {
+            "query": "$INPUT"
+         },
+         "response_json": true,
+         "response_json_field": "content"
+      }
+   }
+}

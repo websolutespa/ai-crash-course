@@ -1,0 +1,4 @@
+run:
+  soft_probe_prompt_cap: 25 #limit number of prompts to probe (for probs that auto-scale their prompt count)
+  seed: 42
+  generations: 1 #number of generations per probe
